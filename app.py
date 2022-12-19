@@ -1,3 +1,7 @@
+import os
+ 
+os.system("pip install -r requirements.txt")
+
 # ライブラリ一覧
 import streamlit as st
 import numpy as np
