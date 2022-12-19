@@ -227,7 +227,7 @@ if up_image is not None:
     print(16)
     # 学習を実行。10%はテストに使用。
     #model.fit(image_list, Y, epochs=1000, batch_size=25, callbacks=[early_stopping])
-    model.fit(image_list, Y, epochs=7, batch_size=15)
+    model.fit(image_list, Y, epochs=10, batch_size=15)
     print(17)
 
     image = np.array(Image.open(up_image).convert('RGB').resize((100, 100)))
@@ -244,13 +244,18 @@ if up_image is not None:
     elif result_index == 2:
         st.markdown("# This brand is [Puma]")
 
+st.title('Counter Example')
+if 'count' not in st.session_state: 
+	st.session_state.count = 0 #countがsession_stateに追加されていない場合，0で初期化
+
+increment = st.button('Activate the camera')
+if increment:
+    st.session_state.count = 1 #値の更新
+
+# st.write('Count = ' + str(st.session_state.count))
 
 # st.button('Activate the camera')
-n = 0
-if st.button('Activate the camera'):
-    n = 1
-
-if n == 1:
+if st.session_state.count == 1:
     camera_input = st.camera_input("Camera input...")
     # camera_input = st.image(camera_input)
     if camera_input is not None:
@@ -351,7 +356,7 @@ if n == 1:
         print(16)
         # 学習を実行。10%はテストに使用。
         #model.fit(image_list, Y, epochs=1000, batch_size=25, callbacks=[early_stopping])
-        model.fit(image_list, Y, epochs=7, batch_size=15)
+        model.fit(image_list, Y, epochs=10, batch_size=15)
         print(17)
 
         image = np.array(Image.open(camera_input).convert('RGB').resize((100, 100)))
