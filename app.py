@@ -246,8 +246,11 @@ if up_image is not None:
 
 
 # st.button('Activate the camera')
-
+n = 0
 if st.button('Activate the camera'):
+    n = 1
+
+if n == 1:
     camera_input = st.camera_input("Camera input...")
     # camera_input = st.image(camera_input)
     if camera_input is not None:
