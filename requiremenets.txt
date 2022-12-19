@@ -1,5 +1,5 @@
 numpy
 keras
 matplotlib
-tensorflow-macos
+tensorflow
 streamlit
