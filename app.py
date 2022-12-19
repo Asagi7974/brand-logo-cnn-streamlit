@@ -246,7 +246,6 @@ if up_image is not None:
     elif result_index == 2:
         st.markdown("# This brand is [Puma]")
 
-st.title('Counter Example')
 if 'count' not in st.session_state: 
 	st.session_state.count = 0 #countがsession_stateに追加されていない場合，0で初期化
 
