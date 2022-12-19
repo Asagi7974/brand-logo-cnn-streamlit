@@ -130,6 +130,8 @@ st.markdown("## Upload your image")
 
 up_image = st.file_uploader("Choose an image...", type="png")
 if up_image is not None:
+    # 画像を表示
+    st.image(up_image, caption='Uploaded Image.', use_column_width=True)
     st.write("Image has been loaded. Please wait for the result...")
     # 学習用のデータを作る.
     image_list = []
@@ -259,6 +261,8 @@ if st.session_state.count == 1:
     camera_input = st.camera_input("Camera input...")
     # camera_input = st.image(camera_input)
     if camera_input is not None:
+        # 画像を表示
+        st.image(camera_input)
         st.write("Image has been loaded. Please wait for the result...")
         # 学習用のデータを作る.
         image_list = []
